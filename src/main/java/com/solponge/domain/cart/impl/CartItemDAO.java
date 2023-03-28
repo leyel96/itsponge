@@ -22,8 +22,13 @@ public class CartItemDAO {
      */
 
     public String cartItemInsert(CartItemVo cartItemVo) {
+        System.out.println("출력사항_getMember_num: "+cartItemVo.getMember_num());
+        System.out.println("출력사항_getPRODUCT_NUM: "+cartItemVo.getProduct_num());
+        System.out.println("출력사항_getCART_ITEM_NUM: "+cartItemVo.getCart_item_num());
+        System.out.println("출력사항_getCART_ITEM_STOCK: "+cartItemVo.getCart_item_stock());
+
         sqlSession.insert("cartItem.insertCartItem", cartItemVo);
-        return String.valueOf(cartItemVo.getCART_ITEM_NUM());
+        return String.valueOf(cartItemVo.getCart_item_num());
     }
 
     public CartItemVo cartItemFindByNum(int CART_ITEM_NUM) {
@@ -40,7 +45,7 @@ public class CartItemDAO {
     public void cartItemUpdate(int CART_ITEM_NUM, CartItemVo cartItemVo){
         Map<String,Object> param=new HashMap<>();
         param.put("CART_ITEM_NUM",CART_ITEM_NUM);
-        param.put("CART_ITEM_STOCK",cartItemVo.getCART_ITEM_STOCK());
+        param.put("CART_ITEM_STOCK",cartItemVo.getCart_item_stock());
         sqlSession.update("cartItem.updateCartItem",param);
     }
 

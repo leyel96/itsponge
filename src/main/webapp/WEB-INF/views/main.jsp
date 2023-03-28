@@ -56,6 +56,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/headerFooter.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script language="JavaScript">
+        
         // $(document).ready(function() {
         // var formData = $('#myForm').serialize();
         // console.log('데이터틀'+formData)

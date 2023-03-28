@@ -31,8 +31,8 @@
 
 
     <insert id="insertOrder" useGeneratedKeys="true" keyProperty="MEMBER_NO" keyColumn="MEMBER_NO">
-        INSERT INTO PAYMENT(MEMBER_NO, MEMBER_ID, MEMBER_PWD, MEMBER_ADDRESS, MEMBER_EMAIL, MEMBER_PHONE, MEMBER_NAME, MEMBER_GRADE, MEMBER_DATE)
-        VALUES(MEMBER_SEQ.NEXTVAL, #{member_id}, #{member_pwd}, #{member_address}, #{member_email}, #{member_phone}, #{member_name}, 'BASIC', SYSTIMESTAMP )
+        INSERT INTO PAYMENT(MEMBER_ID, MEMBER_PWD, MEMBER_ADDRESS, MEMBER_EMAIL, MEMBER_PHONE, MEMBER_NAME, MEMBER_GRADE, MEMBER_DATE)
+        VALUES(#{member_id}, #{member_pwd}, #{member_address}, #{member_email}, #{member_phone}, #{member_name}, 'BASIC', NOW() )
     </insert>
     <update id="updateOrder">
         update PAYMENT set DELIVERY_NUM=#{delivery_num}, SUCCESS=2 where PAYMENT_NUM=#{payment_num}

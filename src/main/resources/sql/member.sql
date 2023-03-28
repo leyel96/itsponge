@@ -6,7 +6,7 @@ CREATE TABLE MEMBER2 (
                          MEMBER_EMAIL VARCHAR2(50) NOT NULL,
                          MEMBER_PHONE VARCHAR2(50) NOT NULL,
                          MEMBER_NAME VARCHAR2(50) NOT NULL,
-                         MEMBER_GRADE VARCHAR2(10) NOT NULL,
+                         MEMBER_GRADE VARCHAR2(10) NOT NULL,!
                          MEMBER_DATE TIMESTAMP
 );
 

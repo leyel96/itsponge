@@ -28,6 +28,15 @@ public class paymentDAO {
     public String insertPayment(String payment_num, int product_num,long member_No,int payment_stock,String payment_phone, String payment_email,String payment_address, String delivery_info){
         System.out.print("paymentDAO의 insertPayment.\n");
         Map<String, Object> param = new HashMap<>();
+        System.out.println("payment_num: "+payment_num);
+        System.out.println("product_num: "+product_num);
+        System.out.println("member_No: "+member_No);
+        System.out.println("payment_stock: "+payment_stock);
+        System.out.println("payment_phone: "+payment_phone);
+        System.out.println("payment_email: "+payment_email);
+        System.out.println("payment_address: "+payment_address);
+        System.out.println("delivery_info: "+delivery_info);
+
         param.put("payment_num", payment_num);
         param.put("member_No", member_No);
         param.put("product_num", product_num);
@@ -37,7 +46,7 @@ public class paymentDAO {
         param.put("payment_address", payment_address);
         param.put("deliver_info", delivery_info);
         sqlSession.insert("payment.insertPayment", param);
-        sqlSession.update("collection_of_sql_statements.updateProductSale", param);
+        sqlSession.update("collection_of_sql_statements.updateProductSale2", param);
         return param.get("payment_num").toString();
     }
 
